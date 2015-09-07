@@ -1,8 +1,10 @@
-# angular-data-table
+# angular-data-table [![Join the chat at https://gitter.im/Swimlane/angular-data-table](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Swimlane/angular-data-table?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-`angular-data-table` is a AngularJS directive for presenting large and complex data.  It has all the features you would expect from any other table but in a light package with no external depedencies. The table was designed to be extremely flexible and light; it doesn't make any assumptions about your data or how you: filter, sort or page it. 
+[![Join the chat at https://gitter.im/bxwalker/angular-data-table](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bxwalker/angular-data-table?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-It was engineered from its conception to handle thousands of rows without sacrificing performance.  It was built for modern browsers using ES6, CSS3 and HTML5 and only supports [Evergreen Browsers](http://eisenbergeffect.bluespire.com/evergreen-browsers/) and >= 1.3.x Angular.
+`angular-data-table` is a AngularJS directive for presenting large and complex data.  It has all the features you would expect from any other table but in a light package with _no external depedencies_. The table was designed to be extremely flexible and light; it doesn't make any assumptions about your data or how you: filter, sort or page it. 
+
+It was engineered from its conception to handle thousands of rows without sacrificing performance.  It was built for modern browsers using _ES6, CSS3 and HTML5_ and only supports [Evergreen Browsers](http://eisenbergeffect.bluespire.com/evergreen-browsers/) and >= 1.4.x Angular.
 
 See live demos [here](http://swimlane.github.io/angular-data-table/).
 
@@ -32,7 +34,7 @@ See live demos [here](http://swimlane.github.io/angular-data-table/).
 #### Download
 
 - NPM `npm install angular-data-table`
-- JSPM `jspm install github:Swimlane/data-table`
+- JSPM `jspm install github:Swimlane/angular-data-table`
 
 or Github download or clone of course!
 
@@ -54,17 +56,17 @@ docs coming soon, in the meantime, 'View Source' is your friend ;)!
 
 You've got 5 different options to include this in your build depending on your setup.
 
-- `./release/data-table.js` - A standalone file that was compiled with Babel and EXCLUDES the Babel runtime.
-- `./release/data-table.helpers.js` - A standalone file that was compiled with Babel and INCLUDES the Babel runtime.
-- `./release/data-table.helpers.min.js` - A standalone file that was compiled with Babel, INCLUDES the Babel runtime and is MINIFIED.
-- `./release/data-table.es6.js` - Raw ES6 Version.
+- `./release/dataTable.js` - A standalone file that was compiled with Babel and EXCLUDES the Babel runtime.
+- `./release/dataTable.helpers.js` - A standalone file that was compiled with Babel and INCLUDES the Babel runtime.
+- `./release/dataTable.helpers.min.js` - A standalone file that was compiled with Babel, INCLUDES the Babel runtime and is MINIFIED.
+- `./release/dataTable.es6.js` - Raw ES6 Version.
 
 There is also the CSS too:
 
-- `./release/data-table.css` - The base CSS, pretty much required
+- `./release/dataTable.css` - The base CSS, pretty much required
 - `./release/material.css` - Material theme
 
-If none of the above makes any sense just include `./release/data-table.min.js` and include the css files referenced above.
+If none of the above makes any sense just include `./release/dataTable.helpers.min.js` and include the css files referenced above.
 
 #### Usage
 
@@ -88,7 +90,7 @@ then using expressive markup in your template:
     <dtable options="options" rows="data" class="material dt">
       <column name="Name" width="300" flex-grow="2"></column>
       <column name="Gender">
-        <strong>{{value}}</strong>
+        <strong>{{$row.name}}</strong>: {{$cell}}
       </column>
     </dtable>
 
@@ -104,7 +106,7 @@ I looked over all the alternatives out there agnostic to any particular platform
 
 - [Angular Grid](http://www.angulargrid.com/) - A great project by a talented developer, however, lacked many of the core features I needed.  Implementing the ones I needed was huge undertaking as some of the core would need to be re-worked.
 
-- [React Fixed Data Table](https://facebook.github.io/fixed-data-table/) - This is probably the BEST table alternative out there.  Its extremely smooth, handles millions of rows flawlessly, has a great API lacked a few features I needed ( nor am I a react'er ).
+- [React Fixed Data Table](https://facebook.github.io/fixed-data-table/) - This is probably the BEST table alternative out there.  Its extremely smooth, handles millions of rows flawlessly, has a great API but lacked a few features I needed ( nor am I a react'er ).
 
 - [React Data Grid](https://github.com/zippyui/react-datagrid) - Another great alternative out there for react.
 
@@ -112,7 +114,9 @@ I looked over all the alternatives out there agnostic to any particular platform
 
 - [UI Grid](http://ui-grid.info) - By far the most popular grid for Angular and has a LOT of features. Problem was I found several bugs ( I'm on a mac, the main devs are windows users ), it supports a ton of browsers ( hacky code and bloat ) and it has a ton of features ( bloat ).
 
-- [Vaadin](http://demo.vaadin.com/sampler/#ui/grids-and-trees/grid) - A nice poylmer project but beta-ish.
+- [Vaadin Poylmer Grid](http://demo.vaadin.com/sampler/#ui/grids-and-trees/grid) - A nice poylmer project but beta-ish.
+
+- [Ember Table](http://addepar.github.io/ember-table/) - A very nice table for Ember but doesn't handle large data sets very nicely and scrolling can be a bit 'janky' sometimes.
 
 #### Design
 
@@ -123,3 +127,7 @@ The core CSS for the table has no assumptions about the styling of your applicat
 - [Material Table 2](http://danielnagy.me/md-data-table/)
 - [Material Table 3](http://codepen.io/zavoloklom/pen/IGkDz)
 - [Material Design Spec](http://www.google.com/design/spec/components/data-tables.html#data-tables-tables-within-cards)
+
+## Credits
+
+`angular-data-table` is a [Swimlane](http://swimlane.com) open-source project; we believe in giving back to the open-source community by sharing some of the projects we build for our application. Swimlane is an automated cyber security operations and incident response platform that enables cyber security teams to leverage threat intelligence, speed up incident response and automate security operations.
